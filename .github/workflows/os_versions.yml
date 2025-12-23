@@ -5,19 +5,18 @@ name: Operating systems
 
 on:
   push:
-    branches: [ "master" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "master" ]
+    branches: ["main"]
   workflow_dispatch:
 
 jobs:
   build:
-
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
-        os: [ ubuntu-latest, macos-latest, windows-latest ]
+        os: [ubuntu-latest, macos-latest, windows-latest]
 
     steps:
       - uses: actions/checkout@v4
